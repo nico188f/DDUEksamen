@@ -36,8 +36,6 @@ public class playerMovement : MonoBehaviour
         
         if (Input.GetKeyUp(KeyCode.LeftShift))
             speed = walkSpeed;
-        
-            
     }
 
     void FixedUpdate()
