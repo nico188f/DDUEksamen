@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class CashManager
+public class DroppedItem : MonoBehaviour
 {
-    public static int cash;
+    public Item item;
 }

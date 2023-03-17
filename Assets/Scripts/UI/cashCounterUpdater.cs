@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class cashCounterUpdater : MonoBehaviour
+public class CashCounterUpdater : MonoBehaviour
 {
     public TextMeshProUGUI text;
     int previousCash;
@@ -17,15 +17,15 @@ public class cashCounterUpdater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (previousCash != cashManager.cash)
+        if (previousCash != CashManager.cash)
         {
             updateCashCounter();
-            previousCash = cashManager.cash;
+            previousCash = CashManager.cash;
         }
     }
 
     private void updateCashCounter()
     {
-        text.text = cashManager.cash.ToString() + "$";
+        text.text = CashManager.cash.ToString() + "$";
     }
 }
