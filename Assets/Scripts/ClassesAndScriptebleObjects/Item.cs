@@ -6,10 +6,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Item", menuName = "Item/Create New Item")]
 public class Item : ScriptableObject
 {
-    public int id;
-    public string Title;
-    public string description;
-    public Sprite icon;
-    public GameObject placedObject;
-    public Dictionary<string, int> stats = new Dictionary<string, int>();
+    public ItemType itemType;
+    
+
+}
+
+public enum ItemType{
+    Placeble,
+    Tool,
+    ItemThatCanBeSold 
 }
