@@ -11,7 +11,7 @@ public class CashCounterUpdater : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        updateCashCounter();
+        UpdateCashCounter();
     }
 
     // Update is called once per frame
@@ -19,12 +19,12 @@ public class CashCounterUpdater : MonoBehaviour
     {
         if (previousCash != CashManager.cash)
         {
-            updateCashCounter();
+            UpdateCashCounter();
             previousCash = CashManager.cash;
         }
     }
 
-    private void updateCashCounter()
+    private void UpdateCashCounter()
     {
         text.text = CashManager.cash.ToString() + "$";
     }

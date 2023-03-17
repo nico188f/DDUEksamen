@@ -4,7 +4,7 @@ using UnityEngine;
 
 //Kilde: https://stuartspixelgames.com/2018/06/24/simple-2d-top-down-movement-unity-c/
 
-public class playerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
 
     Rigidbody2D body;
