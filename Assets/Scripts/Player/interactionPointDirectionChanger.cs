@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
-public class interactionPointDirectionChanger : MonoBehaviour
+public class InteractionPointDirectionChanger : MonoBehaviour
 {
     Transform interactionPointTransform;
 

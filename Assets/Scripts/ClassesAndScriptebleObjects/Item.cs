@@ -6,13 +6,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Item", menuName = "Item/Create New Item")]
 public class Item : ScriptableObject
 {
-    public ItemType itemType;
-    
+    public Sprite sprite;
 
+    public ItemType itemType;
+
+    [Tooltip("If set to 0 it cant be sold.")]
+    public int price;
+
+    public int stackAmount;
+
+    [TextAreaAttribute]
+    public string description;
 }
 
 public enum ItemType{
     Placeble,
-    Tool,
-    ItemThatCanBeSold 
+    Tool
 }
