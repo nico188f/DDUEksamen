@@ -4,21 +4,36 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public static InventoryManager Instance;
-    public List<Item> items = new List<Item>();
+    public static InventoryManager instance;
+    public InventorySlot[] InventorySlots;
+    public GameObject InventoryItemPrefab;
 
     public void Awake()
     {
-        Instance = this;
     }
 
-    public void Add(Item item)
+    public void AddItem(Item item)
     {
-        items.Add(item);
+        foreach (InventorySlot inventorySlot in InventorySlots)
+        {
+            InventoryItem ItemInSlot = inventorySlot.GetComponentInChildren<InventoryItem>();
+            if (ItemInSlot == null)
+            {
+                SpawnNewItem(item, inventorySlot);
+                return;
+            }
+        }
+    }
+
+    public void SpawnNewItem(Item item, InventorySlot inventorySlot)
+    {
+        GameObject newItemInInventory = Instantiate(InventoryItemPrefab, inventorySlot.transform);
+        InventoryItem inventoryItem = newItemInInventory.GetComponent<InventoryItem>();
+        inventoryItem.InitialiseItem(item);
     }
 
     public void Remove(Item item) 
     { 
-        items.Remove(item); 
+        
     }
 }
