@@ -11,8 +11,16 @@ public class ItemAndMoneyPickUp : MonoBehaviour
     {
         if (collision.CompareTag("DroppedItem"))
         {
-            inventoryManager.AddItem(collision.gameObject.GetComponent<DroppedItem>().item);
-            Destroy(collision.gameObject);
+            bool result = inventoryManager.AddItem(collision.gameObject.GetComponent<DroppedItem>().item);
+            if (result)
+            {
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                collision.gameObject.layer = LayerMask.NameToLayer("Default");
+            }
+            
         }
     }
 }
