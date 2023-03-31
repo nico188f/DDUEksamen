@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d510cd9e953d1934b9382a5df8ee17b5, type: 3}
   m_Name: Example
   m_EditorClassIdentifier: 
-  id: 0
-  Title: Example
+  sprite: {fileID: -2413806693520163455, guid: 5f4dddf17c1ba204cafb0b3a268ad4a9, type: 3}
+  itemType: 0
+  price: 19
+  stackAmount: 20
   description: Example description.
-  icon: {fileID: 0}
-  placedObject: {fileID: 0}

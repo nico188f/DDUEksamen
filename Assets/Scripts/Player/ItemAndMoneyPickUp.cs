@@ -8,7 +8,7 @@ public class ItemAndMoneyPickUp : MonoBehaviour
     {
         if (collision.CompareTag("DroppedItem"))
         {
-            InventoryManager.Instance.Add(collision.GetComponent<DroppedItem>().item);
+            InventoryManager.instance.AddItem(collision.gameObject.GetComponent<DroppedItem>().item);
             Destroy(collision.gameObject);
         }
     }
