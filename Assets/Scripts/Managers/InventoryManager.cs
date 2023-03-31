@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public static InventoryManager instance;
     public InventorySlot[] InventorySlots;
     public GameObject InventoryItemPrefab;
 
-    public void Awake()
-    {
-    }
 
     public void AddItem(Item item)
     {
