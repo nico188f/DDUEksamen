@@ -36,4 +36,6 @@ public class DragAll : MonoBehaviour
             dragging.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
         }
     }
+
 } 
+
