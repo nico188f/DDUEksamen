@@ -20,6 +20,7 @@ public class Item : ScriptableObject
 }
 
 public enum ItemType{
+    Utility,
     Placeble,
     Tool
 }

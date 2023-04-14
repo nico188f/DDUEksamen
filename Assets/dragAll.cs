@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class dragAll : MonoBehaviour{
+public class dragAll : MonoBehaviour
+{
     private Transform dragging = null;
     private Vector3 offset;
 
@@ -14,4 +15,5 @@ public class dragAll : MonoBehaviour{
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
         }
     }
+}
 
