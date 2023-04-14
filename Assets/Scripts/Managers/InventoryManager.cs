@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager Instance;
+
+    public Item[] StartItems;
     public InventorySlot[] InventorySlots;
     public GameObject InventoryItemPrefab;
 
     public int selectedSlot = -1;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         ChangeSelectedSlot(0);
+        foreach (Item item in StartItems)
+        {
+            AddItem(item);
+        }
     }
 
     private void Update()
@@ -72,8 +84,15 @@ public class InventoryManager : MonoBehaviour
         inventoryItem.InitialiseItem(item);
     }
 
-    public void Remove(Item item) 
-    { 
-        
+    public Item GetSelectedItem(bool use)
+    {
+        InventorySlot Slot = InventorySlots[selectedSlot];
+        InventoryItem ItemInSlot = Slot.GetComponentInChildren<InventoryItem>();
+        if (ItemInSlot != null)
+        {
+            return ItemInSlot.item;
+        }
+
+        return null;
     }
 }
