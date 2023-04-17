@@ -11,5 +11,9 @@ public class InputManager : MonoBehaviour
         {
             inventory.SetActive(!inventory.activeSelf);
         }
+        else if (Input.GetKeyDown(KeyCode.Escape) && inventory.activeSelf)
+        {
+            inventory.SetActive(false);
+        }
     }
 }

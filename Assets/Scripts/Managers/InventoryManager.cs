@@ -28,7 +28,32 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.inputString != null)
+        if (Input.GetAxis("Mouse ScrollWheel") != 0) // checks if the scrollwheel is used
+        {
+            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            {
+                if (selectedSlot == 6)
+                {
+                    ChangeSelectedSlot(0);
+                }
+                else
+                {
+                    ChangeSelectedSlot(selectedSlot + 1);
+                }
+            }
+            else
+            {
+                if (selectedSlot == 0)
+                {
+                    ChangeSelectedSlot(6);
+                }
+                else
+                {
+                    ChangeSelectedSlot(selectedSlot - 1);
+                }
+            }
+        }
+        else if (Input.inputString != null)
         {
             bool isNumber = int.TryParse(Input.inputString, out int number);
             if (isNumber && number > 0 && number < 8)
@@ -36,6 +61,7 @@ public class InventoryManager : MonoBehaviour
                 ChangeSelectedSlot(number - 1);
             }
         }
+        
     }
 
     void ChangeSelectedSlot(int newSlotIndex)
@@ -84,12 +110,25 @@ public class InventoryManager : MonoBehaviour
         inventoryItem.InitialiseItem(item);
     }
 
-    public Item GetSelectedItem(bool use)
+    public Item GetSelectedItem(bool itemGetsUsed)
     {
         InventorySlot Slot = InventorySlots[selectedSlot];
         InventoryItem ItemInSlot = Slot.GetComponentInChildren<InventoryItem>();
         if (ItemInSlot != null)
         {
+            Item Item = ItemInSlot.item;
+            if (itemGetsUsed)
+            {
+                ItemInSlot.count--;
+                if (ItemInSlot.count <= 0)
+                {
+                    Destroy(ItemInSlot.gameObject);
+                }
+                else
+                {
+                    ItemInSlot.RefreshCount();
+                }
+            }
             return ItemInSlot.item;
         }
 

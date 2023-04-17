@@ -17,9 +17,15 @@ public class Item : ScriptableObject
 
     [TextAreaAttribute]
     public string description;
+
+    [Header("Building")]
+    public GameObject Building;
+
+    
 }
 
-public enum ItemType{
+public enum ItemType
+{
     Utility,
     Placeble,
     Tool
