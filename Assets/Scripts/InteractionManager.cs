@@ -22,6 +22,10 @@ public class InteractionManager : MonoBehaviour
         }
         BuildingPreview.SetLocation(transform.position);
 
+
+        //Building placement
+        //if ()
+
     }
 
     

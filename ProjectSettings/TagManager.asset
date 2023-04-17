@@ -6,6 +6,8 @@ TagManager:
   tags:
   - DroppedItem
   - AttractionZone
+  - PlacementZone
+  - Building
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - 
   - 
   - Movable
-  - backgrund
+  - 
   - 
   - 
   - 
