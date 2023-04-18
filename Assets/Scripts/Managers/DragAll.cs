@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class DragAll : MonoBehaviour
@@ -9,6 +10,7 @@ public class DragAll : MonoBehaviour
     private Transform dragging = null;
     private Vector3 offset;
     [SerializeField] private LayerMask movableLayers;
+
 
     // Update is called once per frame
     void Update()
@@ -30,10 +32,12 @@ public class DragAll : MonoBehaviour
         {
             // Stop dragging.
             dragging = null;
+            
         }
 
         if (dragging != null)
         {
+            dragging.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             Vector3 mousePostion = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
             if (mousePostion.y < yLimit)
             {

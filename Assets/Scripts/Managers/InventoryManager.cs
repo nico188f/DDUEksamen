@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Kilde: https://youtu.be/oJAE6CbsQQA
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;

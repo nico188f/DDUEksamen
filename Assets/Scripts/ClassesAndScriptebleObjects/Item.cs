@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //kilde: https://medium.com/@yonem9/create-an-unity-inventory-part-1-basic-data-model-3b54451e25ec
-[CreateAssetMenu(fileName = "New Item", menuName = "Item/Create New Item")]
+[CreateAssetMenu(fileName = "New Item", menuName = "Scriptable Object/Create New Item")]
 public class Item : ScriptableObject
 {
     public Sprite sprite;
