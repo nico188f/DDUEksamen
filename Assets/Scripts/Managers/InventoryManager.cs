@@ -85,7 +85,7 @@ public class InventoryManager : MonoBehaviour
                 item.stackAmount > ItemInSlot.count)
             {
                 ItemInSlot.count++;
-                ItemInSlot.RefreshCount();
+                ItemInSlot.RefreshCount(true);
                 return true;
             }
         }
@@ -96,6 +96,7 @@ public class InventoryManager : MonoBehaviour
             if (ItemInSlot == null)
             {
                 SpawnNewItem(item, inventorySlot);
+                
                 return true;
             }
         }
@@ -108,6 +109,15 @@ public class InventoryManager : MonoBehaviour
         GameObject newItemInInventory = Instantiate(InventoryItemPrefab, inventorySlot.transform);
         InventoryItem inventoryItem = newItemInInventory.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
+        newItemInInventory.GetComponent<InventoryItem>().count++;
+        if (item.stackAmount > 1)
+        {
+            newItemInInventory.GetComponent<InventoryItem>().RefreshCount(true);
+        }
+        else
+        {
+            newItemInInventory.GetComponent<InventoryItem>().RefreshCount(false);
+        }
     }
 
     public Item GetSelectedItem(bool itemGetsUsed)
@@ -126,7 +136,7 @@ public class InventoryManager : MonoBehaviour
                 }
                 else
                 {
-                    ItemInSlot.RefreshCount();
+                    ItemInSlot.RefreshCount(true);
                 }
             }
             return ItemInSlot.item;

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.Experimental.Rendering;
 
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -14,7 +15,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public Image image;
     public TextMeshProUGUI text;
 
-    public int count;
+    public int count = 0;
 
     [HideInInspector] public Transform parentAfterDrag;
 
@@ -27,9 +28,16 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         item = NewItem;
         image.sprite = NewItem.sprite;
     }
-    public void RefreshCount()
+    public void RefreshCount(bool showCount)
     {
-        text.text = count.ToString();
+        if (showCount)
+        {
+            text.text = count.ToString();
+        }
+        else
+        {
+            text.text = "";
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)

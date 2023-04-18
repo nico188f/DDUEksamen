@@ -25,7 +25,7 @@ public class BuildingPreview : MonoBehaviour
         }
         else
         {
-            SpriteRenderer.color = new Color(0, 0, 0, 0);
+            SpriteRenderer.sprite = null;
         }
 
     }

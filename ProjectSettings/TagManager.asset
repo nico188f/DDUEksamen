@@ -45,3 +45,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: PreviewBuilding
+    uniqueID: 210352121
+    locked: 0

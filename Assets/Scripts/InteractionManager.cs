@@ -24,7 +24,13 @@ public class InteractionManager : MonoBehaviour
 
 
         //Building placement
-        //if ()
+        if (isInPlacementZone && Input.GetKeyDown(KeyCode.E) && CurrentlySelectedItem != null && CurrentlySelectedItem.itemType == ItemType.Placeble)
+        {
+            if(BuildingPreview.TryToPlaceBuilding(CurrentlySelectedItem.Building))
+            {
+                InventoryManager.Instance.GetSelectedItem(true);
+            }
+        }
 
     }
 

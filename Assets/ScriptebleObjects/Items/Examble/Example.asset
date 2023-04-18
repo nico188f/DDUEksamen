@@ -15,6 +15,6 @@ MonoBehaviour:
   sprite: {fileID: -2413806693520163455, guid: 5f4dddf17c1ba204cafb0b3a268ad4a9, type: 3}
   itemType: 1
   price: 19
-  stackAmount: 1
+  stackAmount: 2
   description: Example description.
   Building: {fileID: 2314155479387845452, guid: dba01920d40e2a94c858704efd595be6, type: 3}
