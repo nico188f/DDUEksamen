@@ -15,7 +15,6 @@ public class DragAll : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             // Cast our own ray.
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,
                                                  float.PositiveInfinity, movableLayers);
@@ -35,13 +34,13 @@ public class DragAll : MonoBehaviour
 
         if (dragging != null)
         {
-            Vector3 mousePostion = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mousePostion = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
             if (mousePostion.y < yLimit)
             {
                 mousePostion.y = yLimit;
             }
             // Move object, taking into account original offset.
-            dragging.position = mousePostion + offset;
+            dragging.position = mousePostion;
         }
     }
 
