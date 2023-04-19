@@ -30,6 +30,7 @@ private void Update()
        // Debug.Log(wholeDay);
       //  Debug.Log(Light.color);
         Light.color = Color.Lerp(dayColor, nightColor, Mathf.PingPong(Time.time / (wholeDay* 30), 1));
+
     if (currentTime< 0)
         {
             currentTime = wholeDay* 60;
