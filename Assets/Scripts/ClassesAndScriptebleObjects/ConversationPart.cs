@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "New Conversation", menuName = "Scriptable Object/Create New Conversation")]
-public class DialogMessage : ScriptableObject
+public class ConversationPart : ScriptableObject
 {
     [Serializable]
     public class ItemAndAmount
@@ -23,13 +23,16 @@ public class DialogMessage : ScriptableObject
         public int RequiredAmountOfMoney;
 
         [Header("Next step")]
-        public DialogMessage NPCResponce;
-        [Tooltip("If you are in a nested conversation you can navigate out by using this list.")]
-        public List<int> NPCResponceIndex = new List<int>();
+        public ConversationPart NPCResponce;
     }
-    
-    public string NPCDialog;
-    public string carecterName;
+    [Serializable]
+    public class NPCDialog
+    {
+        public string message;
+        public string carecterName;
+    }
+
+    public List<NPCDialog> DialogList = new List<NPCDialog>();
 
     [Header("Reward")]
     public List<ItemAndAmount> Rewards = new List<ItemAndAmount>();
@@ -39,6 +42,4 @@ public class DialogMessage : ScriptableObject
     public UnityEvent OnConversation;
 
     public List<Responce> Responces = new List<Responce>();
-    [Tooltip("If you are in a nested conversation you can navigate out by using this list.")]
-    public List<int> NextConversationPartIndex = new List<int>();
 }

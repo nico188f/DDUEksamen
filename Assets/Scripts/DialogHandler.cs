@@ -2,19 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Doublsb.Dialog;
+using Unity.VisualScripting;
+using UnityEditor.Rendering;
 
 public class DialogHandler : MonoBehaviour
 {
     public DialogManager DialogManager;
-    public Conversation TestConversation;
+    public ConversationPart TestConversation;
+
+    public ConversationPart Conversation;
+
+
 
     private void Awake()
     {
-        
+        RunConversation(TestConversation);
     }
-    public void RunConversation()
+    public void RunConversation(ConversationPart conversationpart)
     {
+        List<DialogData> dialogTexts = new List<DialogData>();
 
+        for (int i = 0; i < conversationpart.DialogList.Count - 1; i++)
+        {
+            dialogTexts.Add(new DialogData(conversationpart.DialogList[i].message, conversationpart.DialogList[i].carecterName));
+        }
+        
+        
+        
+        DialogManager.Show(dialogTexts);
     }
 
     private void Check_Correct()
