@@ -313,6 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogManager: {fileID: 106275409}
+  TestConversation: {fileID: 0}
 --- !u!1 &96445096
 GameObject:
   m_ObjectHideFlags: 0

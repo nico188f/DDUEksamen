@@ -6,21 +6,15 @@ using Doublsb.Dialog;
 public class DialogHandler : MonoBehaviour
 {
     public DialogManager DialogManager;
+    public Conversation TestConversation;
 
     private void Awake()
     {
-        var dialogTexts = new List<DialogData>();
+        
+    }
+    public void RunConversation()
+    {
 
-        var Text1 = new DialogData("What is 2 times 5? a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a");
-        Text1.SelectList.Add("Correct", "10");
-        Text1.SelectList.Add("Wrong", "7");
-        Text1.SelectList.Add("Whatever", "Why should I care?");
-
-        Text1.Callback = () => Check_Correct();
-
-        dialogTexts.Add(Text1);
-
-        DialogManager.Show(dialogTexts);
     }
 
     private void Check_Correct()
