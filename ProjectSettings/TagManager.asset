@@ -48,3 +48,6 @@ TagManager:
   - name: PreviewBuilding
     uniqueID: 210352121
     locked: 0
+  - name: Player
+    uniqueID: 3110550755
+    locked: 0
