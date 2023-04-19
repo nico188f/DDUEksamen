@@ -24,6 +24,11 @@ public class TimeAndDate : MonoBehaviour
 private void Update()
     {
         currentTime -= Time.deltaTime;
+//        Debug.Log(nightColor);
+      //  Debug.Log(dayColor);
+     //   Debug.Log(Time.time);
+       // Debug.Log(wholeDay);
+      //  Debug.Log(Light.color);
         Light.color = Color.Lerp(dayColor, nightColor, Mathf.PingPong(Time.time / (wholeDay* 30), 1));
     if (currentTime< 0)
         {
