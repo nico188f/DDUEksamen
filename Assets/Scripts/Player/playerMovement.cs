@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D body;
 
+    public Animator Animator;
+    public SpriteRenderer spriteRenderer;
+
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
@@ -48,5 +51,35 @@ public class PlayerMovement : MonoBehaviour
         }
         
         body.velocity = new Vector2(horizontal * speed, vertical * speed);
+
+        if(horizontal != 0)
+        {
+            Animator.SetBool("WalkingSideways", true);
+            Animator.SetBool("Idle", true);
+            if (horizontal > 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else if (horizontal < 0)
+            {
+                spriteRenderer.flipX = true;
+            }
+
+
+        }
+        else
+        {
+            if(vertical != 0)
+            {
+                Animator.SetBool("Idle", false);
+            }
+            else
+            {
+                Animator.SetBool("Idle", true);
+            }
+            Animator.SetBool("WalkingSideways", false);
+        }
+
+        Animator.SetFloat("VerticalSpeed", vertical);
     }
 }
