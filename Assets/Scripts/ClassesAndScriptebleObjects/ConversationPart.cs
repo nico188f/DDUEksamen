@@ -19,7 +19,7 @@ public class ConversationPart : ScriptableObject
         public string responceMessage;
 
         [Header("Requirement for responce")]
-        public ItemAndAmount RequiredItems;
+        public List<ItemAndAmount> RequiredItems = new List<ItemAndAmount>();
         public int RequiredAmountOfMoney;
 
         [Header("Next step")]
@@ -40,6 +40,5 @@ public class ConversationPart : ScriptableObject
 
     [Header("Next Step")]
     public UnityEvent OnConversation;
-
-    public List<Responce> Responces = new List<Responce>();
+    public List<Responce> ResponceList = new List<Responce>();
 }

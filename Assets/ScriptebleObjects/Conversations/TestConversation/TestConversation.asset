@@ -10,20 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b14a43ca245ab841909f9b9364c8b79, type: 3}
-  m_Name: TestStart
+  m_Name: TestConversation
   m_EditorClassIdentifier: 
   DialogList:
-  - message: Test
-    carecterName: Nicolaj
-  - message: Test2
+  - message: hello
     carecterName: 
-  - message: test3
-    carecterName: Nicolaj
-  - message: Test 4
-    carecterName: Li
+  - message: howdy
+    carecterName: 
   Rewards: []
   cashReward: 0
   OnConversation:
     m_PersistentCalls:
       m_Calls: []
-  Responces: []
+  ResponceList:
+  - responceMessage: penis
+    RequiredItems: []
+    RequiredAmountOfMoney: 0
+    NPCResponce: {fileID: 11400000, guid: a9269fed2621d4b4a91cb2570f90cf15, type: 2}
+  - responceMessage: penis
+    RequiredItems: []
+    RequiredAmountOfMoney: 0
+    NPCResponce: {fileID: 11400000, guid: a9269fed2621d4b4a91cb2570f90cf15, type: 2}
