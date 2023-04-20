@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d510cd9e953d1934b9382a5df8ee17b5, type: 3}
-  m_Name: Dirt
+  m_Name: Milk
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
-  itemType: 1
-  price: 2
-  stackAmount: 3
+  itemType: 0
+  price: 0
+  stackAmount: 0
   description: 
   Building: {fileID: 0}
