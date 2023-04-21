@@ -24,10 +24,15 @@ public class Shop : MonoBehaviour
 
 	void Start()
 	{
+		int i = 0;
 		foreach (var item in ShopItemsList)
-
         {
+			StockManager.Stock.Add(new ConversationPart.ItemAndAmount(item, 0));
+
+
 			GameObject ShopItem = Instantiate(ItemTemplate, transform);
+			ShopItem.GetComponent<ShopItemContainer>().stockIndex = i;
+			i++;
 			ShopItem.GetComponent<ShopItemContainer>().InitializeShopItem(item);
         }
 

@@ -28,9 +28,9 @@ public class DialogHandler : MonoBehaviour
     {
         dialogTexts.Clear();
         FocusConversationPart = conversationpart;
-        foreach (NPCDialog nPCDialog in FocusConversationPart.DialogList)
+        foreach (string nPCDialog in FocusConversationPart.DialogList)
         {
-            dialogTexts.Add(new DialogData(nPCDialog.message, nPCDialog.carecterName));
+            dialogTexts.Add(new DialogData(nPCDialog));
         }
         if (FocusConversationPart.ResponceList.Count > 0)
         {
@@ -50,6 +50,7 @@ public class DialogHandler : MonoBehaviour
 
     private void Check_Correct()
     {
+        Debug.Log("Rip");
         if (FocusConversationPart.OnConversation != null)
         {
             FocusConversationPart.OnConversation.Invoke();
@@ -64,12 +65,15 @@ public class DialogHandler : MonoBehaviour
                 {
                     if (responce.NPCResponce != null)
                     {
+                        Debug.Log("Rip2");
                         RunConversation(responce.NPCResponce);
+                        Debug.Log("Rip3");
                         return;
                     }
                     else break;
                 }
             }
         }
+        Debug.Log("Rip4");
     }
 }

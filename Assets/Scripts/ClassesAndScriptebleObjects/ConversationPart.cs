@@ -12,6 +12,11 @@ public class ConversationPart : ScriptableObject
     {
         public Item item;
         public int amount;
+        public ItemAndAmount(Item item, int amount)
+        {
+            this.item = item;
+            this.amount = amount;
+        }
     }
     [Serializable]
     public class Responce
@@ -25,14 +30,9 @@ public class ConversationPart : ScriptableObject
         [Header("Next step")]
         public ConversationPart NPCResponce;
     }
-    [Serializable]
-    public class NPCDialog
-    {
-        public string message;
-        public string carecterName;
-    }
 
-    public List<NPCDialog> DialogList = new List<NPCDialog>();
+    public string carecterName;
+    public List<string> DialogList = new List<string>();
 
     [Header("Reward")]
     public List<ItemAndAmount> Rewards = new List<ItemAndAmount>();

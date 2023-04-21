@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b14a43ca245ab841909f9b9364c8b79, type: 3}
   m_Name: extended
   m_EditorClassIdentifier: 
+  carecterName: 
   DialogList:
-  - message: no
-    carecterName: 
-  - message: Damn
-    carecterName: 
+  - llllllllllllllllllllllll
+  - a
   Rewards: []
   cashReward: 0
   OnConversation:
