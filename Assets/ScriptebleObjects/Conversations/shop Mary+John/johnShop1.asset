@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b14a43ca245ab841909f9b9364c8b79, type: 3}
+  m_Name: johnShop1
+  m_EditorClassIdentifier: 
+  carecterName: John
+  DialogList:
+  - Hello.
+  - I'm just looking for some snacks or softdrinks to bring to my daughter's soccer
+    game today.
+  - Do you have some recommendations?
+  Rewards: []
+  cashReward: 0
+  OnConversation:
+    m_PersistentCalls:
+      m_Calls: []
+  ResponceList:
+  - responceMessage: What about chips and coke?
+    RequiredItems: []
+    RequiredAmountOfMoney: 0
+    NPCResponce: {fileID: 11400000, guid: adc287f085cfaa741873b4d554332441, type: 2}
+  - responceMessage: What about chips and powerade?
+    RequiredItems: []
+    RequiredAmountOfMoney: 0
+    NPCResponce: {fileID: 11400000, guid: adc287f085cfaa741873b4d554332441, type: 2}

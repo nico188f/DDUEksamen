@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b14a43ca245ab841909f9b9364c8b79, type: 3}
+  m_Name: maryShop2
+  m_EditorClassIdentifier: 
+  carecterName: Mary
+  DialogList:
+  - You see that milk on the conveyor belt?
+  - Try hover your mouse over the milk and then hold the Left mouse button down to
+    drag it
+  - You can then scan the milk and put it in my bag
+  Rewards: []
+  cashReward: 0
+  OnConversation:
+    m_PersistentCalls:
+      m_Calls: []
+  ResponceList: []
