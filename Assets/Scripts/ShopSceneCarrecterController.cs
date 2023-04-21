@@ -11,7 +11,7 @@ public class ShopSceneCarrecterController : MonoBehaviour
     public Transform LeftPoint;
     public Transform CenterPoint;
     public Transform RightPoint;
-    public Transform FocusPoint;
+    public Vector3 FocusPoint;
 
     public float speed;
 
@@ -31,7 +31,7 @@ public class ShopSceneCarrecterController : MonoBehaviour
 
     private void Start()
     {
-        FocusPoint = CenterPoint;
+        FocusPoint = CenterPoint.position;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
     
@@ -39,7 +39,7 @@ public class ShopSceneCarrecterController : MonoBehaviour
     private void Update()
     {
 
-        transform.position = Vector3.SmoothDamp(transform.position, FocusPoint.position, ref velocity, smoothTime, speed);
+        transform.position = Vector3.SmoothDamp(transform.position, FocusPoint, ref velocity, smoothTime, speed);
 
         if (transform.position == CenterPoint.position)
         {
@@ -63,10 +63,10 @@ public class ShopSceneCarrecterController : MonoBehaviour
         }
 
         transform.position = LeftPoint.position;
-        FocusPoint.position = CenterPoint.position;
+        FocusPoint = CenterPoint.position;
     }
     public void CharecterMoveOut()
     {
-        FocusPoint.position = RightPoint.position;
+        FocusPoint = RightPoint.position;
     }
 }

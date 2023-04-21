@@ -9,6 +9,9 @@ using UnityEngine.Events;
 
 public class DialogHandler : MonoBehaviour
 {
+    public bool ConversationShouldStartWhenCharecterIsReady = false;
+
+    public ShopSceneCarrecterController shopSceneCarrecterController;
     public DialogManager DialogManager;
     public ConversationPart TestConversation;
 
@@ -16,18 +19,29 @@ public class DialogHandler : MonoBehaviour
 
     public List<DialogData> dialogTexts = new List<DialogData>();
 
+    private void Update()
+    {
+        if (shopSceneCarrecterController.isOnCenter && ConversationShouldStartWhenCharecterIsReady)
+        {
+            ConversationShouldStartWhenCharecterIsReady = false;
+            RunConversationPart(FocusConversationPart);
+        }
+    }
+
 
     private void Awake()
     {
         if (TestConversation != null)
         {
-            RunConversationPart(TestConversation);
+            StartNewConvosation(TestConversation);
         }
     }
 
-    public void StartNewConvosation()
+    public void StartNewConvosation(ConversationPart conversationpart)
     {
-        
+        FocusConversationPart = conversationpart;
+        shopSceneCarrecterController.CharecterMoveIn(conversationpart.carecterName);
+        ConversationShouldStartWhenCharecterIsReady = true;
     }
 
     public void RunConversationPart(ConversationPart conversationpart)
