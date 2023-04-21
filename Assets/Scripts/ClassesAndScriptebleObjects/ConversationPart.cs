@@ -7,6 +7,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "New Conversation", menuName = "Scriptable Object/Create New Conversation")]
 public class ConversationPart : ScriptableObject
 {
+
     [Serializable]
     public class ItemAndAmount
     {

@@ -21,10 +21,16 @@ public class DialogHandler : MonoBehaviour
     {
         if (TestConversation != null)
         {
-            RunConversation(TestConversation);
+            RunConversationPart(TestConversation);
         }
     }
-    public void RunConversation(ConversationPart conversationpart)
+
+    public void StartNewConvosation()
+    {
+        
+    }
+
+    public void RunConversationPart(ConversationPart conversationpart)
     {
         dialogTexts.Clear();
         FocusConversationPart = conversationpart;
@@ -66,7 +72,7 @@ public class DialogHandler : MonoBehaviour
                     if (responce.NPCResponce != null)
                     {
                         Debug.Log("Rip2");
-                        RunConversation(responce.NPCResponce);
+                        RunConversationPart(responce.NPCResponce);
                         Debug.Log("Rip3");
                         return;
                     }
