@@ -13,12 +13,22 @@ MonoBehaviour:
   m_Name: extended
   m_EditorClassIdentifier: 
   carecterName: 
+  spawnRandomItems: 0
   DialogList:
   - llllllllllllllllllllllll
   - a
+  SpawnRandomShopItems: 0
   Rewards: []
   cashReward: 0
   OnConversation:
     m_PersistentCalls:
       m_Calls: []
-  ResponceList: []
+  ResponceList:
+  - responceMessage: 
+    RequiredItems: []
+    RequiredAmountOfMoney: 0
+    OnResponce:
+      m_PersistentCalls:
+        m_Calls: []
+    NPCResponce: {fileID: 0}
+  NextConversation: {fileID: 0}

@@ -14,10 +14,14 @@ public class DialogHandler : MonoBehaviour
     public ShopSceneCarrecterController shopSceneCarrecterController;
     public DialogManager DialogManager;
     public ConversationPart TestConversation;
+    public ShopItemSpawner shopItemSpawner;
+
 
     public ConversationPart FocusConversationPart;
 
     public List<DialogData> dialogTexts = new List<DialogData>();
+
+    public bool aConversationIsActive = false;
 
     private void Update()
     {
@@ -39,8 +43,14 @@ public class DialogHandler : MonoBehaviour
 
     public void StartNewConvosation(ConversationPart conversationpart)
     {
+        aConversationIsActive = true;
+
         FocusConversationPart = conversationpart;
-        shopSceneCarrecterController.CharecterMoveIn(conversationpart.carecterName);
+        if (conversationpart.isStartOfConversation)
+        {
+            shopSceneCarrecterController.CharecterMoveIn(conversationpart.carecterName);
+        }
+        
         ConversationShouldStartWhenCharecterIsReady = true;
     }
 
@@ -50,7 +60,7 @@ public class DialogHandler : MonoBehaviour
         FocusConversationPart = conversationpart;
         foreach (string nPCDialog in FocusConversationPart.DialogList)
         {
-            dialogTexts.Add(new DialogData(nPCDialog));
+            dialogTexts.Add(new DialogData(nPCDialog, "Nicolaj"));
         }
         if (FocusConversationPart.ResponceList.Count > 0)
         {
@@ -64,18 +74,11 @@ public class DialogHandler : MonoBehaviour
         }
         dialogTexts[dialogTexts.Count - 1].Callback = () => Check_Correct();
 
-        Debug.Log("npssmv");
         DialogManager.Show(dialogTexts);
     }
 
     private void Check_Correct()
     {
-        Debug.Log("Rip");
-        if (FocusConversationPart.OnConversation != null)
-        {
-            FocusConversationPart.OnConversation.Invoke();
-            
-        }
         if (FocusConversationPart.ResponceList.Count > 0)
         {
             for (int i = 0; i < FocusConversationPart.ResponceList.Count; i++)
@@ -83,17 +86,37 @@ public class DialogHandler : MonoBehaviour
                 Responce responce = FocusConversationPart.ResponceList[i];
                 if (DialogManager.Result == i.ToString())
                 {
+                    if (responce.ShopItemsToSpawnOn.Count > 0)
+                    {
+                        shopItemSpawner.SpawnShopItem(responce.ShopItemsToSpawnOn);
+                    }
+
                     if (responce.NPCResponce != null)
                     {
-                        Debug.Log("Rip2");
                         RunConversationPart(responce.NPCResponce);
-                        Debug.Log("Rip3");
                         return;
                     }
                     else break;
                 }
             }
         }
-        Debug.Log("Rip4");
+        if (FocusConversationPart.ShopItemsToSpawnOn.Count > 0)
+        {
+            shopItemSpawner.SpawnShopItem(FocusConversationPart.ShopItemsToSpawnOn);
+        }
+        if (FocusConversationPart.NextConversation != null)
+        {
+            RunConversationPart(FocusConversationPart.NextConversation);
+            return;
+        }
+        if (FocusConversationPart.isEndOfConversation)
+        {
+            shopSceneCarrecterController.CharecterMoveOut();
+        }
+        else
+        {
+            aConversationIsActive = false;
+        }
+        
     }
 }

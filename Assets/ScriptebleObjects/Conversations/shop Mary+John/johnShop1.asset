@@ -12,23 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b14a43ca245ab841909f9b9364c8b79, type: 3}
   m_Name: johnShop1
   m_EditorClassIdentifier: 
+  isStartOfConversation: 1
+  isEndOfConversation: 0
   carecterName: John
+  spawnRandomItems: 0
   DialogList:
-  - Hello.
+  - Howdy
   - I'm just looking for some snacks or softdrinks to bring to my daughter's soccer
     game today.
   - Do you have some recommendations?
+  SpawnRandomShopItems: 0
   Rewards: []
   cashReward: 0
-  OnConversation:
-    m_PersistentCalls:
-      m_Calls: []
+  ShopItemsToSpawnOn: []
   ResponceList:
   - responceMessage: What about chips and coke?
     RequiredItems: []
     RequiredAmountOfMoney: 0
+    ShopItemsToSpawnOn:
+    - {fileID: 11400000, guid: bd8292bd9cffa1e40a0d81995493b38b, type: 2}
+    - {fileID: 11400000, guid: 3ade235d8803ca74896a5c0ab0c2c64b, type: 2}
     NPCResponce: {fileID: 11400000, guid: adc287f085cfaa741873b4d554332441, type: 2}
   - responceMessage: What about chips and powerade?
     RequiredItems: []
     RequiredAmountOfMoney: 0
+    ShopItemsToSpawnOn:
+    - {fileID: 11400000, guid: bd8292bd9cffa1e40a0d81995493b38b, type: 2}
+    - {fileID: 11400000, guid: 0fb0ca54741b8544f96db3138880001e, type: 2}
     NPCResponce: {fileID: 11400000, guid: adc287f085cfaa741873b4d554332441, type: 2}
+  NextConversation: {fileID: 0}

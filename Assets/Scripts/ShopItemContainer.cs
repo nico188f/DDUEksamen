@@ -11,6 +11,7 @@ public class ShopItemContainer : MonoBehaviour
     public GameObject button;
     public GameObject priceText;
     public GameObject stockText;
+    public GameObject sellPriceText;
     public int stockIndex;
 
     public void InitializeShopItem(Item tempItem)
@@ -19,7 +20,7 @@ public class ShopItemContainer : MonoBehaviour
         sprite.GetComponent<Image>().sprite = item.sprite;
         priceText.GetComponent<TextMeshProUGUI>().text = $"{item.price.ToString()}$";
         stockText.GetComponent<TextMeshProUGUI>().text = "Stock: " + StockManager.Stock[stockIndex].amount.ToString();
-
+        sellPriceText.GetComponent<TextMeshProUGUI>().text = $"Sell price: {item.sellPrice.ToString()}$";
     }
 
     public void ClickBuyButton()

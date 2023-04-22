@@ -10,8 +10,11 @@ public class Item : ScriptableObject
 
     public ItemType itemType;
 
-    [Tooltip("If set to 0 it cant be sold.")]
+    
     public int price;
+
+    [Tooltip("If set to 0 it cant be sold.")]
+    public int sellPrice;
 
     public int stackAmount;
 

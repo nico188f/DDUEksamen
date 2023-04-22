@@ -22,6 +22,7 @@ public class ConversationPart : ScriptableObject
     [Serializable]
     public class Responce
     {
+        [TextAreaAttribute]
         public string responceMessage;
 
         [Header("Requirement for responce")]
@@ -29,17 +30,26 @@ public class ConversationPart : ScriptableObject
         public int RequiredAmountOfMoney;
 
         [Header("Next step")]
+        public List<Item> ShopItemsToSpawnOn = new List<Item>();
         public ConversationPart NPCResponce;
     }
-
+    public bool isStartOfConversation;
+    public bool isEndOfConversation;
     public string carecterName;
+    public bool spawnRandomItems;
+
+    [TextAreaAttribute]
     public List<string> DialogList = new List<string>();
+
+    [Tooltip("Only matters for the first ConversationPart")]
+    public bool SpawnRandomShopItems;
 
     [Header("Reward")]
     public List<ItemAndAmount> Rewards = new List<ItemAndAmount>();
     public int cashReward;
 
     [Header("Next Step")]
-    public UnityEvent OnConversation;
+    public List<Item> ShopItemsToSpawnOn = new List<Item>();
     public List<Responce> ResponceList = new List<Responce>();
+    public ConversationPart NextConversation;
 }

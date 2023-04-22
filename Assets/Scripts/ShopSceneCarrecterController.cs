@@ -29,6 +29,10 @@ public class ShopSceneCarrecterController : MonoBehaviour
 
     public bool isOnCenter = false;
 
+    public DialogHandler dialogHandler;
+
+
+
     private void Start()
     {
         FocusPoint = CenterPoint.position;
@@ -41,13 +45,18 @@ public class ShopSceneCarrecterController : MonoBehaviour
 
         transform.position = Vector3.SmoothDamp(transform.position, FocusPoint, ref velocity, smoothTime, speed);
 
-        if (transform.position == CenterPoint.position)
+        if (transform.position.x >= CenterPoint.position.x-1 && transform.position.x <= CenterPoint.position.x + 1)
         {
             isOnCenter = true;
         }
         else
         {
             isOnCenter = false;
+        }
+
+        if (transform.position.x >= RightPoint.position.x - 1)
+        {
+            dialogHandler.aConversationIsActive = false;
         }
     }
     public void CharecterMoveIn(string name)

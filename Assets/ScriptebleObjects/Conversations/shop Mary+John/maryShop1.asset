@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b14a43ca245ab841909f9b9364c8b79, type: 3}
   m_Name: maryShop1
   m_EditorClassIdentifier: 
+  isStartOfConversation: 1
+  isEndOfConversation: 0
   carecterName: Mary
+  spawnRandomItems: 0
   DialogList:
   - Hey again. I got the milk
   - As you are new to this kind of job I can teach you how to manage the counter!
+  SpawnRandomShopItems: 0
   Rewards: []
   cashReward: 0
-  OnConversation:
-    m_PersistentCalls:
-      m_Calls: []
+  ShopItemsToSpawnOn:
+  - {fileID: 11400000, guid: f928068b5a9a12049950944a1855f635, type: 2}
   ResponceList: []
+  NextConversation: {fileID: 11400000, guid: 0005c3fe50adb7444b7fe415e0b2ad44, type: 2}

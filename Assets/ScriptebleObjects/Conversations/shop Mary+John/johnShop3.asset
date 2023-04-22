@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b14a43ca245ab841909f9b9364c8b79, type: 3}
   m_Name: johnShop3
   m_EditorClassIdentifier: 
+  isStartOfConversation: 0
+  isEndOfConversation: 1
   carecterName: John
+  spawnRandomItems: 0
   DialogList:
-  - "I have to go. I don\u2019t want to miss my daughters game"
-  - See you later
+  - "John: I have to go. I don\u2019t want to miss my daughters game"
+  - 'John: See you later!'
+  SpawnRandomShopItems: 0
   Rewards: []
   cashReward: 0
-  OnConversation:
-    m_PersistentCalls:
-      m_Calls: []
+  ShopItemsToSpawnOn: []
   ResponceList: []
+  NextConversation: {fileID: 0}

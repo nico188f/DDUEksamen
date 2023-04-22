@@ -8,6 +8,7 @@ TagManager:
   - AttractionZone
   - PlacementZone
   - Building
+  - ShopSceneItem
   layers:
   - Default
   - TransparentFX

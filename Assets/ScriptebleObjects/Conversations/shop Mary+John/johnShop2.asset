@@ -12,15 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b14a43ca245ab841909f9b9364c8b79, type: 3}
   m_Name: johnShop2
   m_EditorClassIdentifier: 
+  isStartOfConversation: 0
+  isEndOfConversation: 0
   carecterName: John
+  spawnRandomItems: 0
   DialogList:
-  - "That\u2019s a great combination thank you"
-  - I am John by the way. You are new here right?...
-  - Oh you are the new owner!
-  - Welcome to Retail Avenue!
+  - "That\u2019s a great combination thank you!"
+  - I am John by the way
+  - 'John: And you must be the new owner of Retail Avenue! Its great to see this
+    small shop being up and running again'
+  - Welcome to Milwood! You know word travels quickly in a small town like Milwood.
+    I suspect you soon will be serving all of Milwood!
+  SpawnRandomShopItems: 0
   Rewards: []
   cashReward: 0
-  OnConversation:
-    m_PersistentCalls:
-      m_Calls: []
+  ShopItemsToSpawnOn: []
   ResponceList: []
+  NextConversation: {fileID: 0}

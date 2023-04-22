@@ -12,15 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b14a43ca245ab841909f9b9364c8b79, type: 3}
   m_Name: maryShop2
   m_EditorClassIdentifier: 
+  isStartOfConversation: 0
+  isEndOfConversation: 0
   carecterName: Mary
+  spawnRandomItems: 0
   DialogList:
   - You see that milk on the conveyor belt?
   - Try hover your mouse over the milk and then hold the Left mouse button down to
     drag it
   - You can then scan the milk and put it in my bag
+  SpawnRandomShopItems: 0
   Rewards: []
   cashReward: 0
-  OnConversation:
-    m_PersistentCalls:
-      m_Calls: []
+  ShopItemsToSpawnOn: []
   ResponceList: []
+  NextConversation: {fileID: 0}
