@@ -8,7 +8,10 @@ public class InteractionManager : MonoBehaviour
     Item CurrentlySelectedItem;
     bool isInPlacementZone = false;
     public BuildingPreview BuildingPreview;
-
+    bool collideLady = false;
+    GameObject lady;
+    bool collideComputer = false;
+    GameObject computer;
     // Update is called once per frame
     void Update()
     {
@@ -31,6 +34,14 @@ public class InteractionManager : MonoBehaviour
                 InventoryManager.Instance.GetSelectedItem(true);
             }
         }
+        if (Input.GetKeyDown(KeyCode.E) && collideLady)
+        {
+            lady.GetComponent<CharecterDialog>().Interact();
+        }
+        if (Input.GetKeyDown(KeyCode.E) && collideComputer)
+        {
+            computer.GetComponent<Interacteble>().interact();
+        }
 
     }
 
@@ -43,6 +54,14 @@ public class InteractionManager : MonoBehaviour
             case "PlacementZone":
                 EnterPlacementZone();
                 break;
+            case "Charecter":
+                collideLady = true;
+                lady = collision.gameObject;
+                break;
+            case "WebShop":
+                collideComputer = true;
+                computer= collision.gameObject;
+                break;
             default:
                 break;
         }
@@ -54,6 +73,12 @@ public class InteractionManager : MonoBehaviour
         {
             case "PlacementZone":
                 ExitPlacementZone();
+                break;
+            case "Charecter":
+                collideLady = false;
+                break;
+            case "WebShop":
+                collideComputer = false;
                 break;
             default:
                 break;

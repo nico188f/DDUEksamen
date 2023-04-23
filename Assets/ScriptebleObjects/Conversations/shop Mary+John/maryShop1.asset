@@ -17,8 +17,8 @@ MonoBehaviour:
   carecterName: Mary
   spawnRandomItems: 0
   DialogList:
-  - Hey again. I got the milk
-  - As you are new to this kind of job I can teach you how to manage the counter!
+  - 'Mary: Hey again. I got the milk'
+  - 'Mary: As you are new to this kind of job I can teach you how to manage the counter!'
   SpawnRandomShopItems: 0
   Rewards: []
   cashReward: 0

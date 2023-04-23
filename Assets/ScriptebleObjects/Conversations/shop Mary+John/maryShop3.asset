@@ -17,8 +17,8 @@ MonoBehaviour:
   carecterName: Mary
   spawnRandomItems: 0
   DialogList:
-  - You are a quick learner I see!
-  - Thank you. I will see you later
+  - 'Mary: You are a quick learner I see!'
+  - 'Mary: Thank you. I will see you later'
   SpawnRandomShopItems: 0
   Rewards: []
   cashReward: 0

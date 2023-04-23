@@ -9,6 +9,8 @@ TagManager:
   - PlacementZone
   - Building
   - ShopSceneItem
+  - WebShop
+  - Charecter
   layers:
   - Default
   - TransparentFX

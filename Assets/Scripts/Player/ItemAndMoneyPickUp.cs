@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemAndMoneyPickUp : MonoBehaviour
 {
     public InventoryManager inventoryManager;
-
+    public AudioSource AudioSource;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,6 +15,7 @@ public class ItemAndMoneyPickUp : MonoBehaviour
             if (result)
             {
                 Destroy(collision.gameObject);
+                AudioSource.Play();
             }
             else
             {

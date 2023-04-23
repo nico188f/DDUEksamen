@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b14a43ca245ab841909f9b9364c8b79, type: 3}
+  m_Name: Mary2
+  m_EditorClassIdentifier: 
+  isStartOfConversation: 0
+  isEndOfConversation: 0
+  carecterName: 
+  spawnRandomItems: 0
+  DialogList:
+  - Anyways im Mary nice to meet ya. I will be help you learn the ropes of how to
+    run a convinience store.
+  - 'Mary: First of all you will need to buy some stock for the store. It still has
+    a lot of the old stock but you need to buy some more.'
+  - 'Mary: I have given you a Restocking computer. Using it you can restock the store.
+    you can''t place it on the path as that would block the road.'
+  - 'Mary: As part of the Retail Avenues property you also own a patch of land up
+    th path to the left. go up there and place it!'
+  - 'Mary: Once you have placed it you should buy 1 Cola, 1 Powerade and 1 bag of
+    Chips. /wait:0.5/Oh and can you also buy a Milk for me then i will be your first
+    costumor!'
+  SpawnRandomShopItems: 0
+  Rewards: []
+  cashReward: 0
+  ShopItemsToSpawnOn: []
+  ResponceList: []
+  NextConversation: {fileID: 0}

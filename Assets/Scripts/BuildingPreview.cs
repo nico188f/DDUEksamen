@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class BuildingPreview : MonoBehaviour
 {
+    public AudioSource AudioSource;
+
     public SpriteRenderer SpriteRenderer;
     public Color PreviewColor;
     public Color IllegalLocationColor;
     public int illLegalLocations;
 
+
+    public GameObject webshop;
     void UpdateSprite(Sprite newSprite)
     {
         SpriteRenderer.sprite = newSprite;
@@ -39,7 +43,13 @@ public class BuildingPreview : MonoBehaviour
     {
         if (illLegalLocations == 0)
         {
-            Instantiate(Building, transform.position, Quaternion.identity);
+
+            GameObject temp = Instantiate(Building, transform.position, Quaternion.identity);
+
+            temp.GetComponent<Interacteble>().initialize(webshop);
+            AudioSource.Play();
+
+
             return true;
         }
         return false;

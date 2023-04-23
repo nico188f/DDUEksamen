@@ -9,6 +9,7 @@ using UnityEngine.Events;
 
 public class DialogHandler : MonoBehaviour
 {
+    public bool IsOnShopScene = true;
     public bool ConversationShouldStartWhenCharecterIsReady = false;
 
     public ShopSceneCarrecterController shopSceneCarrecterController;
@@ -25,7 +26,7 @@ public class DialogHandler : MonoBehaviour
 
     private void Update()
     {
-        if (shopSceneCarrecterController.isOnCenter && ConversationShouldStartWhenCharecterIsReady)
+        if (IsOnShopScene && shopSceneCarrecterController.isOnCenter && ConversationShouldStartWhenCharecterIsReady)
         {
             ConversationShouldStartWhenCharecterIsReady = false;
             RunConversationPart(FocusConversationPart);

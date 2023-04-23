@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b14a43ca245ab841909f9b9364c8b79, type: 3}
+  m_Name: MaryYesPath
+  m_EditorClassIdentifier: 
+  isStartOfConversation: 0
+  isEndOfConversation: 0
+  carecterName: 
+  spawnRandomItems: 0
+  DialogList:
+  - Thats great to hear! it has been a /speed:down/long/speed:init/ time since this
+    shop has been up and running.
+  SpawnRandomShopItems: 0
+  Rewards: []
+  cashReward: 0
+  ShopItemsToSpawnOn: []
+  ResponceList:
+  - responceMessage: ...
+    RequiredItems: []
+    RequiredAmountOfMoney: 0
+    ShopItemsToSpawnOn: []
+    NPCResponce: {fileID: 11400000, guid: ffafc1510ba7ba34189e295d428206b1, type: 2}
+  NextConversation: {fileID: 11400000, guid: ffafc1510ba7ba34189e295d428206b1, type: 2}

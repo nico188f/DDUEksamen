@@ -25,7 +25,12 @@ public class ShopItemContainer : MonoBehaviour
 
     public void ClickBuyButton()
     {
-        StockManager.Stock[stockIndex].amount++;
-        stockText.GetComponent<TextMeshProUGUI>().text = "Stock: " + StockManager.Stock[stockIndex].amount.ToString();
+        if(item.price < CashManager.cash)
+        {
+            StockManager.Stock[stockIndex].amount++;
+            stockText.GetComponent<TextMeshProUGUI>().text = "Stock: " + StockManager.Stock[stockIndex].amount.ToString();
+            CashManager.cash -= item.price;
+        }
+        
     }
 }

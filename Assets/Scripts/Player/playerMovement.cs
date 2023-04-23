@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public AudioSource audioSource;
+
 
     Rigidbody2D body;
 
@@ -56,6 +58,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Animator.SetBool("WalkingSideways", true);
             Animator.SetBool("Idle", true);
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
             if (horizontal > 0)
             {
                 spriteRenderer.flipX = false;
@@ -71,6 +77,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if(vertical != 0)
             {
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.Play();
+                }
+                
                 Animator.SetBool("Idle", false);
             }
             else

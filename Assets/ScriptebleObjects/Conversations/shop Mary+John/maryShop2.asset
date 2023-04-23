@@ -17,10 +17,10 @@ MonoBehaviour:
   carecterName: Mary
   spawnRandomItems: 0
   DialogList:
-  - You see that milk on the conveyor belt?
-  - Try hover your mouse over the milk and then hold the Left mouse button down to
-    drag it
-  - You can then scan the milk and put it in my bag
+  - 'Mary: You see that milk on the conveyor belt?'
+  - 'Mary: Try hover your mouse over the milk and then hold the Left mouse button
+    down to drag it'
+  - 'Mary: You can then scan the milk and put it in my bag'
   SpawnRandomShopItems: 0
   Rewards: []
   cashReward: 0
