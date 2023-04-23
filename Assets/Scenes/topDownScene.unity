@@ -43390,7 +43390,7 @@ MonoBehaviour:
   Light: {fileID: 1091693284}
   nightColor: {r: 0, g: 0, b: 0, a: 0}
   dayColor: {r: 0, g: 0, b: 0, a: 0}
-  wholeDay: 10
+  wholeDay: 20
   DateText: {fileID: 424612891}
 --- !u!1 &768516521
 GameObject:

@@ -24,10 +24,10 @@ MonoBehaviour:
   - 'Mary: I have given you a Restocking computer. Using it you can restock the store.
     you can''t place it on the path as that would block the road.'
   - 'Mary: As part of the Retail Avenues property you also own a patch of land up
-    th path to the left. go up there and place it!'
+    the path to the left. go up there and place it!'
   - 'Mary: Once you have placed it you should buy 1 Cola, 1 Powerade and 1 bag of
     Chips. /wait:0.1/Oh and can you also buy a Milk for me then i will be your first
-    costumor!'
+    customer!'
   SpawnRandomShopItems: 0
   Rewards: []
   cashReward: 0
