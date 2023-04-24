@@ -31237,7 +31237,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.003, y: 0.003}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &226173122
 MonoBehaviour:
@@ -55712,8 +55712,8 @@ MonoBehaviour:
   audioSource: {fileID: 1387575706}
   Animator: {fileID: 1387575705}
   spriteRenderer: {fileID: 1387575704}
-  walkSpeed: 10
-  runSpeed: 15
+  walkSpeed: 6
+  runSpeed: 10
 --- !u!50 &1387575703
 Rigidbody2D:
   serializedVersion: 4
@@ -58520,7 +58520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3808237ce14612044b566b164007dc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSource: {fileID: 0}
+  AudioSource: {fileID: 1514662838}
   SpriteRenderer: {fileID: 1514662836}
   PreviewColor: {r: 1, g: 1, b: 1, a: 0.4117647}
   IllegalLocationColor: {r: 1, g: 0, b: 0, a: 0.54901963}

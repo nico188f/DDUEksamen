@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d510cd9e953d1934b9382a5df8ee17b5, type: 3}
   m_Name: ComputerItem
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: e1e51d3786024544698bc83176901946, type: 2}
+  sprite: {fileID: 21300000, guid: 723c88d717aaf0642ad3d251ed3187cc, type: 3}
   itemType: 1
   price: 0
   sellPrice: 0
